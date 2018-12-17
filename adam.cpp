@@ -149,7 +149,7 @@ int main()
 	
 	for(int i=0;i<n;i++)
 	{
-		cout << <abs(2.0 - theta[i]) << endl; //prints the error of the adam optimizer output.
+		cout << abs(2.0 - theta[i]) << endl; //prints the error of the adam optimizer output.
 	}
 }
 
