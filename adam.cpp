@@ -123,7 +123,7 @@ double *adam(double Theta[], double alpha, double beta_1, double beta_2, double 
 	while(t<100000) //need to decide what our critera for convergence should be, right now the program just iterates through 100000 time steps
 	{
 		t =t + 1; 
-		g_t = fprime(theta,n); //gets the gradient of the "stochastic function", we need to either use complex step derivative or reserve mode automatic differientation or just compute fprime
+		g_t = fprime(theta,n); //gets the gradient of the "stochastic function", we need to either use complex step derivative, reverse mode automatic differientation, or just compute fprime
 		m_t = addvec(scalar(beta_1,m_t,n),scalar(1.0-beta_1,g_t,n),n); //update moving averages of the gradients
 		v_t = addvec(scalar(beta_2,v_t,n),scalar(1.0-beta_2,elementwisesquare(g_t,g_t,n),n),n); //updates the moving average of the gradient squared
 		m_tHat = scalar(pow(1.0-pow(beta_1,t),-1.0),m_t,n); // calculates the bias-correct estimates
